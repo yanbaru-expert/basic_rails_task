@@ -91,11 +91,13 @@ def q10
 
   # 以下に回答を記載
   foods.each do |food|
-
+    if food.include?("うに")
+      puts "好物です"
+    else
+      puts "まぁまぁ好きです"
+    end
   end
 end
-
-
 def q11
 
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
@@ -120,11 +122,8 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  user_data[:age] = 32
-  user_data[:address] = "沖縄"
-
+  user_data.merge!(update_data)
   p user_data
-
 end
 
 def q14
@@ -140,12 +139,16 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  p data1.include?(:age)
-  p data2.include?(:age)
-
-  
- 
-  
+  if data1.has_key?(:age)
+    puts "OK"
+  else
+    puts "NG"
+  end
+ if data2.has_key?(:age)
+  puts "OK"
+ else
+  puts "NG"
+ end
 end
 
 def q16
